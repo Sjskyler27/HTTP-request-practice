@@ -1,15 +1,67 @@
- http://localhost:8081/
+//LOCAL HOST
+// GET ALL
+GET http://localhost:8081/ 
+###// GET ONE
+GET http://localhost:8081/644dc2ff88c1c8e075e6f70c
 ###
-http://localhost:8081/644dc2ff88c1c8e075e6f70c
+// CREATE ONE
+POST http://localhost:8081/createOne HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Thomas", "lastName":"Wayne", "email":"Thomas@test.com", "favoriteColor":"red", "birthday":"06/02/2000"
+}
 ###
-http://localhost:8081/644dc3da88c1c8e075e6f70d
+// CREATE MANY
+POST http://localhost:8081/createMany HTTP/1.1 
+content-type: application/json
+
+[
+  {
+    "firstName": "Thomas",
+    "lastName": "Wayne",
+    "email": "Thomas@test.com",
+    "favoriteColor": "red",
+    "birthday": "06/02/1960"
+  },
+  {
+    "firstName": "Bruce",
+    "lastName": "Wayne",
+    "email": "Bruce@test.com",
+    "favoriteColor": "black",
+    "birthday": "01/03/1995"
+  },
+  {
+    "firstName": "Martha",
+    "lastName": "Wayne",
+    "email": "martha@test.com",
+    "favoriteColor": "blue",
+    "birthday": "03/04/1961"
+  }
+]
 ###
-http://localhost:8081/644dc40688c1c8e075e6f70e
+// PUT
+
 ###
-https://wsweek2ind.onrender.com/
+//DELETE ONE Please include new ID
+Delete http://localhost:8081/deleteOne/64569baa081922d2ff88ff80
 ###
-https://wsweek2ind.onrender.com/644dc2ff88c1c8e075e6f70c
-###
-https://wsweek2ind.onrender.com/644dc3da88c1c8e075e6f70d
-###
-https://wsweek2ind.onrender.com/644dc40688c1c8e075e6f70e
+//DELETE MANY
+Delete http://localhost:8081/deleteMany HTTP/1.1 
+content-type: application/json
+
+{
+  "lastName": "Wayne"
+}
+
+
+
+// RENDER DEPLOY
+
+//GET ALL
+
+// CREATE ONE
+// CREATE MANY
+// PUT
+//DELETE ONE
+//DELETE MANY

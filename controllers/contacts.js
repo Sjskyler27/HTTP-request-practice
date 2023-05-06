@@ -34,7 +34,7 @@ const get = async (req, res) => {
   res.send(result);
 };
 
-// create one listing  in the mongo database using 
+// create one contact  in the mongo database using 
 const createOne = async (req, res) => {
   const db = await database.connectDatabase();
   console.log('attempting to insert: \n' + req.body);
@@ -54,6 +54,7 @@ const createOne = async (req, res) => {
     res.status(500).json(response.error || 'could not create the contact.');
   }
 };
+// create many contacts using a json body
 const createMany = async (req, res) => {
   const db = await database.connectDatabase();
   console.log('attempting to insert: \n' + req.body);
@@ -61,11 +62,11 @@ const createMany = async (req, res) => {
   contacts = [];
   for (contact of req.body){
     newContact = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      favoriteColor: req.body.favoriteColor,
-      birthday: req.body.birthday
+      firstName: contact.firstName,
+      lastName: contact.lastName,
+      email: contact.email,
+      favoriteColor: contact.favoriteColor,
+      birthday: contact.birthday
     };
     contacts.push(newContact);
   };
@@ -81,7 +82,7 @@ const createMany = async (req, res) => {
 
 const update = async (req, res) => {
   const db = await database.connectDatabase();
-  
+
   
 };
 // delete one contact basecd on the id parameter in the url
