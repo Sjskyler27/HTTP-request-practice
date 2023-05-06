@@ -79,12 +79,19 @@ const createMany = async (req, res) => {
     res.status(500).json(response.error || 'could not create the contact.');
   }
 };
-
+// update a contact based on an ID provided, along with the new json to be used 
 const update = async (req, res) => {
   const db = await database.connectDatabase();
-
-  
+  const id = req.params.id;
+  const info = req.body;
+  const response = await db.collection('contacts').updateOne({ _id: new ObjectId(id) }, { $set: info });
+  if (response.acknowledged) {
+    res.status(200).json(response);
+  } else {
+    res.status(500).json(response.error || 'could not delete the contact.');
+  }
 };
+
 // delete one contact basecd on the id parameter in the url
 const deleteOne = async (req, res) => {
   const db = await database.connectDatabase();

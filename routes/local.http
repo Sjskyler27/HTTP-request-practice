@@ -1,0 +1,60 @@
+//LOCAL HOST
+// GET ALL
+GET http://localhost:8081/ 
+###// GET ONE
+GET http://localhost:8081/6456875cb0dcfe7254411483
+###
+// CREATE ONE
+POST http://localhost:8081/createOne HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Thomas", "lastName":"Wayne", "email":"Thomas@test.com", "favoriteColor":"red", "birthday":"06/02/2000"
+}
+###
+// CREATE MANY
+POST http://localhost:8081/createMany HTTP/1.1 
+content-type: application/json
+
+[
+  {
+    "firstName": "Thomas",
+    "lastName": "Wayne",
+    "email": "Thomas@test.com",
+    "favoriteColor": "red",
+    "birthday": "06/02/1960"
+  },
+  {
+    "firstName": "Bruce",
+    "lastName": "Wayne",
+    "email": "Bruce@test.com",
+    "favoriteColor": "black",
+    "birthday": "01/03/1995"
+  },
+  {
+    "firstName": "Martha",
+    "lastName": "Wayne",
+    "email": "martha@test.com",
+    "favoriteColor": "blue",
+    "birthday": "03/04/1961"
+  }
+]
+###
+// PUT Please include an ID
+PUT http://localhost:8081/6456875cb0dcfe7254411483
+content-type: application/json
+
+{
+  "firstName": "toblerone"
+}
+###
+//DELETE ONE Please include new ID
+Delete http://localhost:8081/deleteOne/64569baa081922d2ff88ff80
+###
+//DELETE MANY
+Delete http://localhost:8081/deleteMany HTTP/1.1 
+content-type: application/json
+
+{
+  "lastName": "Wayne"
+}
