@@ -3,7 +3,7 @@ const express = require('express'); // require is grabbing from node modules, it
 const app = express(); // the object app now has the functionallity of express
 
 app.use('/', require('./routes/contacts'));
-const port = process.env.port || 3000;
+const port = process.env.port || 8081;
 
 app.listen(port);
 console.log('Web server at port: ' + port);
