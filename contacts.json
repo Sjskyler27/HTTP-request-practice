@@ -1,0 +1,66 @@
+[
+    {
+      "_id": "644dc2ff88c1c8e075e6f70c",
+      "firstName": "Skyler",
+      "lastName": "Simpson",
+      "email": "sjskyler27@gmail.com",
+      "favoriteColor": "Blue",
+      "birthday": "07/21/1999"
+    },
+    {
+      "_id": "644dc3da88c1c8e075e6f70d",
+      "firstName": "Kiara",
+      "lastName": "Simpson",
+      "email": "kiara@gmail.com",
+      "favoriteColor": "purple",
+      "birthday": "11/08/2001"
+    },
+    {
+      "_id": "644dc40688c1c8e075e6f70e",
+      "firstName": "Ethan",
+      "lastName": "Simpson",
+      "email": "ethan@gmail.com",
+      "favoriteColor": "red",
+      "birthday": "12/03/2002"
+    },
+    {
+      "_id": "644e9cb7e086e70f4a713c25",
+      "firstName": "Jacob",
+      "lastName": "Simpson",
+      "birthday": "04/02/1995",
+      "email": "jacobSimpson@gmail.com",
+      "favoriteColor": "green"
+    },
+    {
+      "_id": "645685ce7f137286f45a6980",
+      "firstName": null,
+      "lastName": null,
+      "email": null,
+      "favoriteColor": null,
+      "birthday": null
+    },
+    {
+      "_id": "6456875cb0dcfe7254411483",
+      "firstName": "toby",
+      "lastName": "mumford",
+      "email": "toby@gmail.com",
+      "favoriteColor": "brown",
+      "birthday": "04/08/2023"
+    },
+    {
+      "_id": "645687b3b29fc41c8a25f90e",
+      "firstName": "maddy",
+      "lastName": "mumford",
+      "email": "toby@gmail.com",
+      "favoriteColor": "brown",
+      "birthday": "04/08/2023"
+    },
+    {
+      "_id": "645687d9cb63767d853a95bc",
+      "firstName": "maddy",
+      "lastName": "mumford",
+      "email": "toby@gmail.com",
+      "favoriteColor": "brown",
+      "birthday": "04/08/2023"
+    }
+  ]
