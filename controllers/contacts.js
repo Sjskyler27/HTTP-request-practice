@@ -8,6 +8,7 @@ const ObjectId = require('mongodb').ObjectId; // this helps with getting the id
 
 // get all contacts from the mongo database
 const getAll = async (req, res) => {
+  // #swagger.summary = 'get all contacts'
   const db = await database.connectDatabase();
   const result = await db.collection('contacts').find().toArray();
   console.log(result);
@@ -16,6 +17,7 @@ const getAll = async (req, res) => {
 
 // get one contact from the mongo database using an id
 const get = async (req, res) => {
+  // #swagger.summary = 'get a contact'
   const db = await database.connectDatabase();
   const id = req.params.id;
   const isValidId = /^[0-9a-fA-F]{24}$/.test(id); // check if id is a valid 24-character hex string
@@ -36,6 +38,7 @@ const get = async (req, res) => {
 
 // create one contact  in the mongo database using 
 const createOne = async (req, res) => {
+  // #swagger.summary = 'create a contact'
   const db = await database.connectDatabase();
   console.log('attempting to insert: \n' + req.body);
   contact = {
@@ -56,6 +59,7 @@ const createOne = async (req, res) => {
 };
 // create many contacts using a json body
 const createMany = async (req, res) => {
+  // #swagger.summary = 'create many contacts'
   const db = await database.connectDatabase();
   console.log('attempting to insert: \n' + req.body);
 
@@ -81,6 +85,7 @@ const createMany = async (req, res) => {
 };
 // update a contact based on an ID provided, along with the new json to be used 
 const update = async (req, res) => {
+  // #swagger.summary = 'update a contact'
   const db = await database.connectDatabase();
   const id = req.params.id;
   const info = req.body;
@@ -94,6 +99,7 @@ const update = async (req, res) => {
 
 // delete one contact basecd on the id parameter in the url
 const deleteOne = async (req, res) => {
+  // #swagger.summary = 'delete a contact'
   const db = await database.connectDatabase();
   const id = req.params.id;
   const response = await db.collection('contacts').deleteOne({ _id: new ObjectId(id) });
@@ -106,6 +112,7 @@ const deleteOne = async (req, res) => {
 
 // delete multiple listings based on a json querry, 
 const deleteMany = async (req, res) => {
+  // #swagger.summary = 'delete many contacts'
   const db = await database.connectDatabase();
   const query = req.body;
   const response = await db.collection('contacts').deleteMany(query);
