@@ -2,19 +2,19 @@
   "swagger": "2.0",
   "info": {
     "title": "Contact API",
-    "description": "This api contains contacts",
+    "description": "This api contains contacts for various people",
     "version": "1.0.0"
   },
   "host": "http-request-practice.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
       "get": {
-        "summary": "get all contacts",
+        "summary": "retrieve contacts from database",
         "description": "",
         "parameters": [],
         "responses": {
@@ -26,7 +26,7 @@
     },
     "/{id}": {
       "get": {
-        "summary": "get a contact",
+        "summary": "get a contact from the database based on the ID",
         "description": "",
         "parameters": [
           {
@@ -46,7 +46,7 @@
         }
       },
       "put": {
-        "summary": "update a contact",
+        "summary": "provide the ID in the url and provide the value of the paramater you want to change in json",
         "description": "",
         "parameters": [
           {
@@ -54,7 +54,20 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                            }
+                          }
+                      }
+              }
+                        
         ],
         "responses": {
           "200": {
@@ -68,7 +81,7 @@
     },
     "/createOne": {
       "post": {
-        "summary": "create a contact",
+        "summary": "Provide the neccessary json o create a contact",
         "description": "",
         "parameters": [
           {
@@ -108,7 +121,7 @@
     },
     "/createMany": {
       "post": {
-        "summary": "create many contacts",
+        "summary": "provide an array of json files to create multiple contacts",
         "description": "",
         "parameters": [
           {
@@ -148,7 +161,7 @@
     },
     "/deleteOne/{id}": {
       "delete": {
-        "summary": "delete a contact",
+        "summary": "provide the ID of the contact to be deleted",
         "description": "",
         "parameters": [
           {
@@ -170,7 +183,7 @@
     },
     "/deleteMany": {
       "delete": {
-        "summary": "delete many contacts",
+        "summary": "provide the value of the parameter for the variouse people you want to delete",
         "description": "",
         "parameters": [
           {
