@@ -5,7 +5,7 @@
     "description": "This api contains contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:8081",
+  "host": "https://http-request-practice.onrender.com/",
   "basePath": "/",
   "schemes": [
     "http"
@@ -109,7 +109,32 @@
       "post": {
         "summary": "create many contacts",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -146,7 +171,20 @@
       "delete": {
         "summary": "delete many contacts",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "firstName": {
+                "example": "any"
+                          }
+                        }
+                    }
+            }
+                      ],
         "responses": {
           "200": {
             "description": "OK"
