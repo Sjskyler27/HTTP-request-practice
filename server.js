@@ -8,6 +8,10 @@ const swaggerFile = require('./swagger-output.json') // created file using swagg
 const app = express(); // the object app now has the functionallity of express
 
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  }); // allow front end access 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use('/', require('./routes/contacts'));
 const port = process.env.port || 8081;
